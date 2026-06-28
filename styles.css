@@ -975,6 +975,77 @@ footer a:hover {
   box-shadow: 0 8px 24px rgba(8, 23, 46, 0.14);
 }
 
+.nurse-application-form {
+  display: grid;
+  gap: 18px;
+}
+
+.nurse-application-form fieldset {
+  margin: 0;
+  padding: 16px;
+  border: 1px solid #d6e4f4;
+  border-radius: 14px;
+  background: #fbfdff;
+}
+
+.nurse-application-form legend {
+  font-weight: 800;
+  color: var(--navy);
+  padding: 0 8px;
+}
+
+.nurse-application-form h4 {
+  margin: 14px 0 10px;
+  color: var(--navy);
+}
+
+.application-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.application-grid.two-col {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.nurse-application-form label {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+  color: #1d3658;
+}
+
+.nurse-application-form input,
+.nurse-application-form select,
+.nurse-application-form textarea {
+  padding: 10px;
+  border: 1px solid #c8d4e6;
+  border-radius: 10px;
+  font: inherit;
+  background: var(--white);
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 14px;
+  margin-bottom: 12px;
+}
+
+.checkbox-grid label,
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-weight: 500;
+  color: #1d3658;
+}
+
+.checkbox-grid input,
+.checkbox-row input {
+  margin-top: 3px;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(16px);
@@ -1047,6 +1118,11 @@ footer a:hover {
   }
 
   .image-row {
+    grid-template-columns: 1fr;
+  }
+
+  .application-grid.two-col,
+  .checkbox-grid {
     grid-template-columns: 1fr;
   }
 }
