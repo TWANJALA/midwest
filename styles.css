@@ -105,11 +105,32 @@ body {
 .brand strong {
   display: block;
   font-size: 0.96rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  animation: brand-emphasis 2.4s ease-in-out infinite;
 }
 
 .brand small {
   opacity: 0.86;
   font-size: 0.74rem;
+}
+
+@keyframes brand-emphasis {
+  0%,
+  100% {
+    transform: translateY(0);
+    text-shadow: 0 0 0 rgba(91, 158, 245, 0);
+  }
+  50% {
+    transform: translateY(-1px);
+    text-shadow: 0 0 12px rgba(91, 158, 245, 0.45);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand strong {
+    animation: none;
+  }
 }
 
 .menu-toggle {
