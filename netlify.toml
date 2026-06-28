@@ -1,0 +1,93 @@
+# Netlify Configuration for Midwest Healthcare Staffing Agency
+
+[build]
+  # No build command needed for static site
+  command = ""
+  publish = "."
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Custom headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/styles.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "text/css"
+
+[[headers]]
+  for = "/script.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "application/javascript"
+
+[[headers]]
+  for = "/*.{jpg,jpeg,png,gif,ico,svg}"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Redirect HTTP to HTTPS
+[[redirects]]
+  from = "http://midwesthealthcarestaffing.com/*"
+  to = "https://midwesthealthcarestaffing.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.midwesthealthcarestaffing.com/*"
+  to = "https://www.midwesthealthcarestaffing.com/:splat"
+  status = 301
+  force = true
+
+# Redirect www to non-www (or vice versa if preferred)
+[[redirects]]
+  from = "https://www.midwesthealthcarestaffing.com/*"
+  to = "https://midwesthealthcarestaffing.com/:splat"
+  status = 301
+  force = true
+
+# Custom error pages
+[[redirects]]
+  from = "/404"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/error"
+  to = "/error.html"
+  status = 500
+
+# Form handling via Formspree (already configured in HTML)
+# Submissions to Formspree will be handled by the action URL in forms
+
+# Context-specific settings
+[context.production]
+  command = ""
+  environment = { NODE_ENV = "production" }
+
+[context.deploy-preview]
+  command = ""
+
+[context.branch-deploy]
+  command = ""

@@ -23,4 +23,4 @@ User-agent: AhrefsBot
 Disallow: /
 
 # Sitemap location
-Sitemap: https://midwesthealthcarestaffing.com/sitemap.xml
+Sitemap: https://www.midwesthealthcarestaffing.com/sitemap.xml
