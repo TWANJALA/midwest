@@ -120,9 +120,22 @@ function renderBreadcrumbs() {
   main.prepend(breadcrumb);
 }
 
+function setupTopbarAnimation() {
+  const topbar = document.querySelector(".topbar");
+  if (!topbar) return;
+
+  const setScrolledState = () => {
+    topbar.classList.toggle("is-scrolled", window.scrollY > 16);
+  };
+
+  setScrolledState();
+  window.addEventListener("scroll", setScrolledState, { passive: true });
+}
+
 renderGlobalNavigation();
 renderGlobalFooter();
 renderBreadcrumbs();
+setupTopbarAnimation();
 
 menuToggle?.addEventListener("click", () => {
   nav.classList.toggle("open");
