@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Server Error | Midwest Healthcare Staffing Agency</title>
+    <meta name="description" content="An error occurred while processing your request. Please try again later." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .error-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 60vh;
+        text-align: center;
+        padding: 2rem;
+      }
+      .error-code {
+        font-size: 6rem;
+        font-weight: 800;
+        color: #d32f2f;
+        margin: 0;
+        line-height: 1;
+      }
+      .error-message {
+        font-size: 2rem;
+        margin: 1rem 0;
+        color: var(--color-text-dark);
+      }
+      .error-description {
+        font-size: 1rem;
+        color: var(--color-text-muted);
+        max-width: 600px;
+        margin: 1rem 0 2rem;
+      }
+      .error-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-bg" aria-hidden="true"></div>
+    <header class="topbar" id="top">
+      <a class="brand" href="index.html" aria-label="Midwest Healthcare Staffing Agency home">
+        <span class="brand-mark">M</span>
+        <span>
+          <strong>Midwest Healthcare Staffing Agency</strong>
+          <small>Connecting Global Healthcare Talent with America's Healthcare Providers</small>
+        </span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">Menu</button>
+      <nav id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="error-container">
+        <h1 class="error-code">500</h1>
+        <h2 class="error-message">Something Went Wrong</h2>
+        <p class="error-description">
+          An error occurred while processing your request. Our team has been notified. 
+          Please try again later or contact us for assistance.
+        </p>
+        <div class="error-actions">
+          <a href="index.html" class="btn btn-gold">Return Home</a>
+          <a href="contact.html" class="btn btn-primary">Get Help</a>
+        </div>
+      </div>
+
+      <section class="section-card reveal">
+        <h3>We're Here to Help</h3>
+        <p>If you continue to experience issues, please reach out to our support team:</p>
+        <p>
+          <strong>Email:</strong> support@midwesthealthcarestaffing.com<br />
+          <strong>Phone:</strong> +1 (800) 555-2424<br />
+          <strong>Hours:</strong> 24/7 Support Available
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-grid">
+        <div>
+          <h3>Midwest Healthcare Staffing Agency</h3>
+          <p>Connecting Global Healthcare Talent with America's Healthcare Providers</p>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

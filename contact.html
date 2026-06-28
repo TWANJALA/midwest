@@ -8,12 +8,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-041TBH2GBJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-041TBH2GBJ');
+    </script>
   </head>
   <body>
     <div class="site-bg" aria-hidden="true"></div>
     <header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">M</span><span><strong>Midwest Healthcare Staffing Agency</strong><small>Contact Us</small></span></a><button class="menu-toggle" id="menuToggle">Menu</button><nav id="mainNav"><a href="index.html">Home</a><a href="contact.html">Contact</a><a href="apply-now.html">Apply Now</a><a href="healthcare-employers.html">Employers</a></nav></header>
     <main class="container">
-      <section class="section-card reveal"><h2>Contact and Global Offices</h2><div class="grid two"><article><h3>U.S. Headquarters</h3><p>Midwest United States</p><p>Phone: +1 (800) 555-2424</p><p>Email: partnerships@midwesthealthcarestaffing.com</p><p>Emergency Hotline: +1 (800) 555-9000</p><p>Live chat available 24/7</p></article><article><h3>Schedule a Consultation</h3><form class="contact-form"><input type="text" placeholder="Full Name" required /><input type="email" placeholder="Work Email" required /><select><option>I am a Healthcare Employer</option><option>I am a Healthcare Professional</option></select><textarea rows="4" placeholder="How can we support you?"></textarea><button type="submit" class="btn btn-gold">Submit Request</button></form></article></div></section>
+      <section class="section-card reveal"><h2>Contact and Global Offices</h2><div class="grid two"><article><h3>U.S. Headquarters</h3><p>Midwest United States</p><p>Phone: +1 (800) 555-2424</p><p>Email: partnerships@midwesthealthcarestaffing.com</p><p>Emergency Hotline: +1 (800) 555-9000</p><p>Live chat available 24/7</p></article><article><h3>Schedule a Consultation</h3><form class="contact-form" action="https://formspree.io/f/movknbrb" method="POST"><input type="text" name="name" placeholder="Full Name" required /><input type="email" name="email" placeholder="Work Email" required /><select name="type" required><option value="">Select your type</option><option>I am a Healthcare Employer</option><option>I am a Healthcare Professional</option></select><textarea name="message" rows="4" placeholder="How can we support you?" required></textarea><button type="submit" class="btn btn-gold">Submit Request</button></form></article></div></section>
     </main>
     <footer><div class="container footer-grid"><div><h3>Midwest Healthcare Staffing Agency</h3></div><div><h4>Apply</h4><ul><li><a href="apply-now.html">Apply Now</a></li></ul></div><div><h4>Resources</h4><ul><li><a href="resources.html">Resource Center</a></li></ul></div><div><h4>FAQ</h4><ul><li><a href="faq.html">FAQ</a></li></ul></div></div></footer>
     <script src="script.js"></script>
