@@ -16,6 +16,7 @@ function renderGlobalNavigation() {
     ["international-nurses.html", "International Nurses"],
     ["healthcare-employers.html", "Healthcare Employers"],
     ["healthcare-professionals.html", "Healthcare Professionals"],
+    ["non-medical-caregivers.html", "Non-Medical Caregivers"],
     ["countries.html", "Countries"],
     ["immigration-visa-services.html", "Immigration & Visa Services"],
     ["credentialing.html", "Credentialing"],
@@ -81,6 +82,7 @@ function renderBreadcrumbs() {
   const header = document.querySelector("header.topbar");
   const main = document.querySelector("main");
   if (!header || !main) return;
+  if (main.querySelector(".breadcrumbs")) return;
 
   const currentPath = getCurrentPath();
   const labels = {
@@ -89,6 +91,7 @@ function renderBreadcrumbs() {
     "international-nurses.html": "International Nurses",
     "healthcare-employers.html": "Healthcare Employers",
     "healthcare-professionals.html": "Healthcare Professionals",
+    "non-medical-caregivers.html": "Non-Medical Caregivers",
     "countries.html": "Countries We Recruit From",
     "immigration-visa-services.html": "Immigration and Visa Services",
     "credentialing.html": "Credentialing",
