@@ -8,6 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
   </head>
   <body>
     <div class="site-bg" aria-hidden="true"></div>
@@ -15,13 +23,13 @@
     <main class="container">
       <section class="section-card reveal">
         <h2>Apply as an International Healthcare Professional</h2>
-        <form class="contact-form" id="applyForm">
-          <input type="text" placeholder="Full Name" required />
-          <input type="email" placeholder="Email" required />
-          <input type="text" placeholder="Primary Specialty" required />
-          <input type="text" placeholder="Country of Origin" required />
-          <select><option>Years of Experience</option><option>2-4 years</option><option>5-7 years</option><option>8+ years</option></select>
-          <textarea rows="4" placeholder="Professional summary"></textarea>
+        <form class="contact-form" id="applyForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <input type="text" name="fullname" placeholder="Full Name" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <input type="text" name="specialty" placeholder="Primary Specialty" required />
+          <input type="text" name="country" placeholder="Country of Origin" required />
+          <select name="experience" required><option value="">Years of Experience</option><option>2-4 years</option><option>5-7 years</option><option>8+ years</option></select>
+          <textarea name="summary" rows="4" placeholder="Professional summary" required></textarea>
           <button type="submit" class="btn btn-gold">Submit Application</button>
         </form>
         <p class="small-note" id="applyMsg"></p>

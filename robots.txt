@@ -1,0 +1,26 @@
+# Robots.txt for Midwest Healthcare Staffing Agency
+# Specify crawling and indexing rules for search engines
+
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /*.pdf$
+
+# Google-specific rules
+User-agent: Googlebot
+Allow: /
+
+# Bing-specific rules
+User-agent: Bingbot
+Allow: /
+
+# Block bad bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://midwesthealthcarestaffing.com/sitemap.xml
