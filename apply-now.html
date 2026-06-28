@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apply Now | Midwest Healthcare Staffing Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-bg" aria-hidden="true"></div>
+    <header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">M</span><span><strong>Midwest Healthcare Staffing Agency</strong><small>Apply Now</small></span></a><button class="menu-toggle" id="menuToggle">Menu</button><nav id="mainNav"><a href="index.html">Home</a><a href="apply-now.html">Apply Now</a><a href="open-positions.html">Open Positions</a><a href="candidate-portal.html">Candidate Portal</a><a href="contact.html">Contact</a></nav></header>
+    <main class="container">
+      <section class="section-card reveal">
+        <h2>Apply as an International Healthcare Professional</h2>
+        <form class="contact-form" id="applyForm">
+          <input type="text" placeholder="Full Name" required />
+          <input type="email" placeholder="Email" required />
+          <input type="text" placeholder="Primary Specialty" required />
+          <input type="text" placeholder="Country of Origin" required />
+          <select><option>Years of Experience</option><option>2-4 years</option><option>5-7 years</option><option>8+ years</option></select>
+          <textarea rows="4" placeholder="Professional summary"></textarea>
+          <button type="submit" class="btn btn-gold">Submit Application</button>
+        </form>
+        <p class="small-note" id="applyMsg"></p>
+      </section>
+      <section class="section-card reveal">
+        <h2>Referral Program</h2>
+        <form id="referralForm" class="filters compact"><input type="text" name="refName" placeholder="Referral name" required /><input type="email" name="refEmail" placeholder="Referral email" required /><button type="submit" class="btn btn-green">Generate Referral Code</button></form>
+        <p class="small-note" id="referralMsg"></p>
+      </section>
+    </main>
+    <footer><div class="container footer-grid"><div><h3>Midwest Healthcare Staffing Agency</h3></div><div><h4>Positions</h4><ul><li><a href="open-positions.html">Open Positions</a></li></ul></div><div><h4>Portal</h4><ul><li><a href="candidate-portal.html">Candidate Portal</a></li></ul></div><div><h4>Support</h4><ul><li><a href="contact.html">Contact</a></li></ul></div></div></footer>
+    <script src="script.js"></script>
+    <script>
+      const applyForm = document.getElementById("applyForm");
+      const applyMsg = document.getElementById("applyMsg");
+      applyForm?.addEventListener("submit", (event) => {
+        event.preventDefault();
+        applyMsg.textContent = "Application received. A recruiter will contact you within 24 hours.";
+        applyForm.reset();
+      });
+    </script>
+  </body>
+</html>

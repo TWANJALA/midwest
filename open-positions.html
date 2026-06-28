@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open Positions | Midwest Healthcare Staffing Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-bg" aria-hidden="true"></div>
+    <header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">M</span><span><strong>Midwest Healthcare Staffing Agency</strong><small>Open Positions</small></span></a><button class="menu-toggle" id="menuToggle">Menu</button><nav id="mainNav"><a href="index.html">Home</a><a href="open-positions.html">Open Positions</a><a href="candidate-portal.html">Candidate Portal</a><a href="healthcare-employers.html">Healthcare Employers</a><a class="btn btn-gold" href="apply-now.html">Apply Now</a></nav></header>
+    <main class="container">
+      <section class="section-card reveal">
+        <h2>Search Jobs</h2>
+        <form id="jobFilters" class="filters" aria-label="Job filters">
+          <select name="state"><option value="">State</option><option>Illinois</option><option>Minnesota</option><option>Ohio</option><option>Texas</option><option>California</option></select>
+          <input type="text" name="city" placeholder="City" />
+          <select name="facility"><option value="">Facility Type</option><option>Hospital</option><option>Nursing Home</option><option>Rehabilitation Center</option><option>Home Health Agency</option></select>
+          <select name="salary"><option value="">Salary</option><option value="80000">$80,000+</option><option value="90000">$90,000+</option><option value="100000">$100,000+</option></select>
+          <select name="shift"><option value="">Shift</option><option>Day</option><option>Night</option><option>Rotating</option></select>
+          <select name="specialty"><option value="">Specialty</option><option>ICU</option><option>ER</option><option>Med Surg</option><option>Dialysis</option></select>
+          <select name="experience"><option value="">Experience</option><option value="2">2+ years</option><option value="4">4+ years</option><option value="6">6+ years</option></select>
+          <label><input type="checkbox" name="visa" /> Visa Sponsorship</label>
+          <label><input type="checkbox" name="housing" /> Housing</label>
+          <button class="btn btn-green" type="submit">Search Jobs</button>
+        </form>
+        <div class="job-list" id="jobList" aria-live="polite"></div>
+        <div class="actions-row"><button class="btn btn-outline-dark" type="button" id="saveJobsBtn">Save Jobs</button><button class="btn btn-blue" type="button" id="alertsBtn">Create Job Alert</button></div>
+        <div class="hospital-map" id="hospitalMap" aria-label="Hospital locator map"></div>
+        <form id="jobAlertForm" class="filters compact"><input type="email" name="alertEmail" placeholder="Email for job alerts" required /><button class="btn btn-gold" type="submit">Enable Job Alerts</button></form>
+        <p class="small-note" id="alertMsg"></p>
+      </section>
+    </main>
+    <footer><div class="container footer-grid"><div><h3>Midwest Healthcare Staffing Agency</h3></div><div><h4>Apply</h4><ul><li><a href="apply-now.html">Apply Now</a></li></ul></div><div><h4>Portal</h4><ul><li><a href="candidate-portal.html">Candidate Portal</a></li></ul></div><div><h4>Contact</h4><ul><li><a href="contact.html">Contact</a></li></ul></div></div></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
