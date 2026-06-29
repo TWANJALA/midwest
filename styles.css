@@ -75,13 +75,16 @@ body {
   position: sticky;
   top: 0;
   z-index: 50;
-  padding: 12px 4vw;
+  padding: 14px 4vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  background: rgba(7, 36, 26, 0.95);
-  backdrop-filter: blur(10px);
+  background: linear-gradient(120deg, rgba(5, 28, 20, 0.98), rgba(7, 46, 33, 0.97));
+  backdrop-filter: blur(14px) saturate(140%);
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary)) 1;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.35);
 }
 
 .brand {
@@ -148,25 +151,67 @@ nav {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 6px;
 }
 
 nav a {
-  color: #e6fff3;
+  position: relative;
+  color: #eafff5;
   text-decoration: none;
-  font-size: 0.86rem;
-  opacity: 0.9;
-  transition: all 0.2s ease;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border-radius: 999px;
+  opacity: 0.95;
+  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--secondary-light));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
 }
 
 nav a:hover {
-  color: var(--secondary-light);
+  color: var(--white);
   opacity: 1;
+  background: rgba(70, 224, 143, 0.14);
+  transform: translateY(-1px);
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
 }
 
 nav a.active {
-  color: var(--secondary-light);
-  font-weight: 800;
+  color: var(--navy);
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--primary-light), var(--accent));
+  box-shadow: 0 6px 16px rgba(0, 224, 122, 0.35);
+}
+
+nav a.active::after {
+  display: none;
+}
+
+/* Keep the Apply Now CTA distinct from the link pills */
+nav a.btn.btn-gold {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+nav a.btn.btn-gold::after {
+  display: none;
 }
 
 .breadcrumbs {
