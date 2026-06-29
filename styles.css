@@ -18,8 +18,15 @@
   --tertiary: #84cc16;
   --tertiary-light: #c4f04d;
 
+  /* Deep Futuristic Navy Canvas Theme */
+  --canvas-deep: #03081c;
+  --canvas-mid: #071a44;
+  --canvas-glow: #0d2a6b;
+  --wave-blue: #2b6cff;
+  --wave-cyan: #46d6ff;
+
   /* Neutral Scale */
-  --navy: #07241a;
+  --navy: #081634;
   --white: #ffffff;
   --light: #f5f7fa;
   --light-bg: #eceff1;
@@ -52,18 +59,29 @@ body {
   padding: 0;
   scroll-behavior: smooth;
   font-family: "Manrope", sans-serif;
-  background: linear-gradient(135deg, #f1faf5 0%, #e6f5ee 50%, #d6f0e2 100%);
+  background: var(--canvas-deep);
   color: var(--text);
+}
+
+/* Flowing-wave canvas injected by script.js */
+.wave-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .site-bg {
   position: fixed;
   inset: 0;
   z-index: -1;
+  pointer-events: none;
   background:
-    radial-gradient(circle at 10% 20%, rgba(11, 191, 106, 0.14), transparent 40%),
-    radial-gradient(circle at 90% 15%, rgba(0, 224, 122, 0.12), transparent 40%),
-    radial-gradient(circle at 70% 80%, rgba(132, 204, 22, 0.1), transparent 40%);
+    radial-gradient(circle at 12% 18%, rgba(43, 108, 255, 0.18), transparent 45%),
+    radial-gradient(circle at 88% 12%, rgba(70, 214, 255, 0.14), transparent 42%),
+    radial-gradient(circle at 70% 85%, rgba(13, 42, 107, 0.35), transparent 55%);
 }
 
 .container {
@@ -80,8 +98,9 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  background: rgba(7, 36, 26, 0.95);
+  background: rgba(8, 22, 52, 0.92);
   backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(70, 214, 255, 0.14);
 }
 
 .brand {
@@ -201,18 +220,15 @@ nav a.active {
   align-items: center;
 }
 
+/* Pure flowing-wave hero: let the fixed canvas show through */
 .hero-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  display: none;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(145deg, rgba(7, 36, 26, 0.9), rgba(11, 191, 106, 0.5));
+  background: linear-gradient(145deg, rgba(3, 8, 28, 0.55), rgba(7, 26, 68, 0.25));
 }
 
 .hero-content {
@@ -933,8 +949,8 @@ footer a:hover {
     position: absolute;
     right: 4vw;
     top: 74px;
-    background: rgba(7, 36, 26, 0.98);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(8, 22, 52, 0.98);
+    border: 1px solid rgba(70, 214, 255, 0.18);
     border-radius: 12px;
     width: min(480px, 92vw);
     padding: 12px;

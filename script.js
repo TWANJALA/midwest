@@ -1,3 +1,117 @@
+/* ----------------------------------------------------------------------------
+   Flowing-wave canvas background
+   A fixed, full-viewport animation of layered light ribbons drifting across a
+   deep navy gradient. Injected on every page so the whole site shares the same
+   futuristic backdrop. Honors prefers-reduced-motion by painting a single
+   static frame.
+---------------------------------------------------------------------------- */
+(function flowingWaveBackground() {
+  const canvas = document.createElement("canvas");
+  canvas.className = "wave-canvas";
+  canvas.setAttribute("aria-hidden", "true");
+  document.body.prepend(canvas);
+
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let width = 0;
+  let height = 0;
+  let dpr = 1;
+
+  // Each layer is a stroked sine ribbon with its own speed, amplitude and hue.
+  const layers = [
+    { amp: 0.16, freq: 1.3, speed: 0.16, offset: 0.34, width: 1.4, color: [70, 214, 255], alpha: 0.40 },
+    { amp: 0.22, freq: 1.0, speed: 0.11, offset: 0.46, width: 1.8, color: [43, 108, 255], alpha: 0.42 },
+    { amp: 0.18, freq: 1.7, speed: 0.20, offset: 0.58, width: 1.2, color: [120, 180, 255], alpha: 0.30 },
+    { amp: 0.26, freq: 0.8, speed: 0.08, offset: 0.66, width: 2.2, color: [27, 80, 200], alpha: 0.45 },
+    { amp: 0.14, freq: 2.1, speed: 0.24, offset: 0.40, width: 1.0, color: [150, 230, 255], alpha: 0.26 },
+    { amp: 0.30, freq: 0.6, speed: 0.06, offset: 0.74, width: 2.6, color: [18, 52, 140], alpha: 0.50 },
+  ];
+
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    canvas.style.width = width + "px";
+    canvas.style.height = height + "px";
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function paintBackdrop() {
+    const g = ctx.createLinearGradient(0, 0, width, height);
+    g.addColorStop(0, "#03081c");
+    g.addColorStop(0.5, "#071a44");
+    g.addColorStop(1, "#04102e");
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, width, height);
+
+    // Soft central glow for depth.
+    const glow = ctx.createRadialGradient(
+      width * 0.5, height * 0.5, 0,
+      width * 0.5, height * 0.5, Math.max(width, height) * 0.7
+    );
+    glow.addColorStop(0, "rgba(13, 42, 107, 0.55)");
+    glow.addColorStop(1, "rgba(13, 42, 107, 0)");
+    ctx.fillStyle = glow;
+    ctx.fillRect(0, 0, width, height);
+  }
+
+  function drawWaves(t) {
+    paintBackdrop();
+    ctx.globalCompositeOperation = "lighter";
+
+    const step = Math.max(6, Math.floor(width / 160));
+    for (const layer of layers) {
+      const baseY = height * layer.offset;
+      const amplitude = height * layer.amp;
+      const phase = t * layer.speed;
+
+      ctx.beginPath();
+      for (let x = 0; x <= width; x += step) {
+        const nx = x / width;
+        // Two summed sines give the ribbon an organic, non-repeating drift.
+        const y =
+          baseY +
+          Math.sin(nx * Math.PI * 2 * layer.freq + phase) * amplitude +
+          Math.sin(nx * Math.PI * 4 * layer.freq + phase * 1.6) * amplitude * 0.25;
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+
+      const [r, g, b] = layer.color;
+      const stroke = ctx.createLinearGradient(0, 0, width, 0);
+      stroke.addColorStop(0, `rgba(${r}, ${g}, ${b}, 0)`);
+      stroke.addColorStop(0.5, `rgba(${r}, ${g}, ${b}, ${layer.alpha})`);
+      stroke.addColorStop(1, `rgba(${r}, ${g}, ${b}, 0)`);
+      ctx.strokeStyle = stroke;
+      ctx.lineWidth = layer.width;
+      ctx.stroke();
+    }
+
+    ctx.globalCompositeOperation = "source-over";
+  }
+
+  function loop(now) {
+    drawWaves(now / 1000);
+    requestAnimationFrame(loop);
+  }
+
+  window.addEventListener("resize", () => {
+    resize();
+    if (reduceMotion) drawWaves(0);
+  });
+
+  resize();
+  if (reduceMotion) {
+    drawWaves(0);
+  } else {
+    requestAnimationFrame(loop);
+  }
+})();
+
 const menuToggle = document.getElementById("menuToggle");
 const nav = document.getElementById("mainNav");
 
