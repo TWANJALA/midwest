@@ -477,3 +477,76 @@ contactForm?.addEventListener("submit", (event) => {
   alert("Thank you. Your consultation request has been received.");
   contactForm.reset();
 });
+
+/* ============================================================
+   BOLD MOTION LAYER — runs on every page (shared script)
+   ============================================================ */
+(function () {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Decorative floating orbs + ambient noise backdrop
+  if (!document.querySelector(".orb")) {
+    ["orb orb-1", "orb orb-2", "orb orb-3"].forEach((cls) => {
+      const orb = document.createElement("div");
+      orb.className = cls;
+      orb.setAttribute("aria-hidden", "true");
+      document.body.appendChild(orb);
+    });
+  }
+
+  // Scroll progress indicator
+  const progress = document.createElement("div");
+  progress.className = "scroll-progress";
+  progress.setAttribute("aria-hidden", "true");
+  document.body.appendChild(progress);
+
+  const topbar = document.querySelector(".topbar");
+
+  let ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progress.style.width = pct + "%";
+      if (topbar) topbar.classList.toggle("scrolled", scrollTop > 24);
+      ticking = false;
+    });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  if (reduceMotion) return;
+
+  // Magnetic pull on buttons for a tactile, premium feel
+  const MAGNET = 7;
+  document.querySelectorAll(".btn").forEach((btn) => {
+    btn.addEventListener("pointermove", (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${(x / rect.width) * MAGNET}px, ${(y / rect.height) * MAGNET - 2}px) scale(1.03)`;
+    });
+    btn.addEventListener("pointerleave", () => {
+      btn.style.transform = "";
+    });
+  });
+
+  // Gentle parallax drift on the floating orbs as the page scrolls
+  const orbs = Array.from(document.querySelectorAll(".orb"));
+  if (orbs.length) {
+    window.addEventListener(
+      "scroll",
+      () => {
+        const y = window.scrollY;
+        orbs.forEach((orb, i) => {
+          const depth = (i + 1) * 0.04;
+          orb.style.translate = `0 ${y * depth}px`;
+        });
+      },
+      { passive: true }
+    );
+  }
+})();
