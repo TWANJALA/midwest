@@ -19,7 +19,25 @@
   </head>
   <body>
     <div class="site-bg" aria-hidden="true"></div>
-    <header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">M</span><span><strong>Midwest Healthcare Staffing Agency</strong><small>Employer Portal</small></span></a><button class="menu-toggle" id="menuToggle">Menu</button><nav id="mainNav"><a href="index.html">Home</a><a href="employer-portal.html">Employer Portal</a><a href="healthcare-employers.html">Healthcare Employers</a><a href="contact.html">Contact</a></nav></header>
+    <header class="topbar"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">
+          <svg class="mhsa-logo" viewBox="0 0 64 64" role="img" focusable="false">
+            <defs>
+              <linearGradient id="mhsaBadge" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#46e08f"/>
+                <stop offset="0.55" stop-color="#0bbf6a"/>
+                <stop offset="1" stop-color="#0c7a6e"/>
+              </linearGradient>
+              <linearGradient id="mhsaRing" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#c4f04d"/>
+                <stop offset="1" stop-color="#00e07a"/>
+              </linearGradient>
+            </defs>
+            <circle class="mhsa-ring" cx="32" cy="32" r="29.5" fill="none" stroke="url(#mhsaRing)" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="40 145"/>
+            <rect class="mhsa-badge" x="9" y="9" width="46" height="46" rx="16" fill="url(#mhsaBadge)"/>
+            <path class="mhsa-heart" d="M32 45.5C21.5 35.8 14 30 14 22.6 14 16.7 18.6 13 23.4 13 27.3 13 30.4 15.4 32 18 33.6 15.4 36.7 13 40.6 13 45.4 13 50 16.7 50 22.6 50 30 42.5 35.8 32 45.5Z" fill="#ffffff"/>
+            <path class="mhsa-pulse" d="M15 30H24.5L27.5 22.5 31 36.5 34.5 18.5 37.5 30H49" fill="none" stroke="#07241a" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span><span><strong>Midwest Healthcare Staffing Agency</strong><small>Employer Portal</small></span></a><button class="menu-toggle" id="menuToggle">Menu</button><nav id="mainNav"><a href="index.html">Home</a><a href="employer-portal.html">Employer Portal</a><a href="healthcare-employers.html">Healthcare Employers</a><a href="contact.html">Contact</a></nav></header>
     <main class="container">
       <section class="section-card reveal"><h2>Employer Dashboard</h2><div class="grid three"><article><h3>Hiring Operations</h3><p>Open positions, candidates, interview scheduling, placement progress.</p></article><article><h3>Compliance and Finance</h3><p>Compliance reports, invoices, contracts, and account management.</p></article><article><h3>Analytics</h3><p>Vacancy trends, retention metrics, and pipeline performance.</p></article></div></section>
       <section class="section-card reveal"><h2>Candidate Pipeline Dashboard</h2><div class="pipeline-row"><span>Applied</span><strong>142</strong><div class="bar"><i style="width:100%"></i></div></div><div class="pipeline-row"><span>Credentialing</span><strong>88</strong><div class="bar"><i style="width:62%"></i></div></div><div class="pipeline-row"><span>Interview</span><strong>46</strong><div class="bar"><i style="width:32%"></i></div></div><div class="pipeline-row"><span>Offer</span><strong>23</strong><div class="bar"><i style="width:16%"></i></div></div><div class="pipeline-row"><span>Placed</span><strong>19</strong><div class="bar"><i style="width:13%"></i></div></div></section>
