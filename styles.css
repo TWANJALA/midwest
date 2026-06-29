@@ -41,6 +41,201 @@
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
+.landing-page {
+  --primary: #00d084;
+  --primary-dark: #007a53;
+  --primary-light: #4ff0b3;
+  --secondary: #00f5b0;
+  --secondary-dark: #00a86f;
+  --secondary-light: #73ffd2;
+  --accent: #16c47f;
+  --accent-light: #78e7b9;
+  --tertiary: #00e59b;
+  --tertiary-light: #7bffcd;
+  --success: #00c986;
+  --info: #00b878;
+}
+
+.landing-page {
+  background: linear-gradient(135deg, #06130f 0%, #0a2018 45%, #143026 100%);
+}
+
+.landing-page .site-bg {
+  background:
+    radial-gradient(circle at 8% 18%, rgba(0, 245, 176, 0.16), transparent 42%),
+    radial-gradient(circle at 88% 12%, rgba(0, 208, 132, 0.2), transparent 45%),
+    radial-gradient(circle at 72% 84%, rgba(79, 240, 179, 0.12), transparent 40%);
+}
+
+.landing-page .topbar {
+  background: linear-gradient(90deg, rgba(4, 18, 14, 0.98), rgba(8, 38, 28, 0.98));
+  border-bottom: 2px solid rgba(115, 255, 210, 0.55);
+  box-shadow: 0 10px 30px rgba(0, 72, 49, 0.4);
+}
+
+.landing-page .topbar::before {
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(79, 240, 179, 0.18) 35%,
+    rgba(115, 255, 210, 0.3) 50%,
+    rgba(0, 208, 132, 0.2) 65%,
+    transparent 100%
+  );
+}
+
+.landing-page .topbar.is-scrolled {
+  background: linear-gradient(90deg, rgba(3, 17, 12, 1), rgba(5, 29, 21, 1));
+  box-shadow: 0 12px 32px rgba(0, 64, 43, 0.5);
+}
+
+.landing-page .brand-mark {
+  box-shadow: 0 0 18px rgba(79, 240, 179, 0.35);
+}
+
+.landing-page .hero-overlay {
+  background: linear-gradient(145deg, rgba(3, 18, 14, 0.88), rgba(0, 208, 132, 0.45));
+}
+
+.landing-page .eyebrow {
+  background: rgba(79, 240, 179, 0.12);
+  border: 1px solid rgba(79, 240, 179, 0.6);
+  color: #8cffd9;
+}
+
+.landing-page .btn:hover {
+  box-shadow: 0 10px 24px rgba(0, 120, 80, 0.28);
+}
+
+.landing-page .section-card,
+.landing-page .stats article,
+.landing-page .photo-card,
+.landing-page .grid article,
+.landing-page blockquote,
+.landing-page .blog-card,
+.landing-page .faq-item,
+.landing-page .job-item,
+.landing-page .process-step,
+.landing-page .benefits-grid article,
+.landing-page .gallery-item,
+.landing-page details,
+.landing-page .nurse-screening-panel,
+.landing-page .nurse-profile-card {
+  background: linear-gradient(145deg, rgba(9, 36, 27, 0.9), rgba(7, 26, 20, 0.88));
+  border: 1px solid rgba(115, 255, 210, 0.2);
+  box-shadow: 0 10px 28px rgba(0, 58, 39, 0.24);
+}
+
+.landing-page .section-card h2,
+.landing-page .photo-showcase-header h2,
+.landing-page .process-step h3,
+.landing-page .benefits-grid h3,
+.landing-page .gallery-item h4,
+.landing-page .faq-item button,
+.landing-page details summary {
+  color: #bfffe4;
+}
+
+.landing-page .section-card,
+.landing-page .section-card p,
+.landing-page .section-card li,
+.landing-page .small-note,
+.landing-page .blog-card,
+.landing-page .blog-card p,
+.landing-page .faq-item p,
+.landing-page details p,
+.landing-page .process-step p,
+.landing-page .benefits-grid p,
+.landing-page .gallery-item p,
+.landing-page .testimonial-grid blockquote,
+.landing-page .nurse-profile-copy p {
+  color: #d6f7ea;
+}
+
+.landing-page .photo-card figcaption,
+.landing-page .gallery-image-captioned figcaption,
+.landing-page .nurse-screening-image figcaption {
+  background: rgba(6, 29, 22, 0.9);
+  color: #d8ffec;
+}
+
+.landing-page .pill-list li,
+.landing-page .check-list li,
+.landing-page .service-list li {
+  background: rgba(12, 58, 43, 0.72);
+  border-color: rgba(115, 255, 210, 0.24);
+  color: #d4fce9;
+}
+
+.landing-page .world-map {
+  border: 1px solid rgba(115, 255, 210, 0.24);
+  background:
+    linear-gradient(160deg, rgba(0, 208, 132, 0.2), rgba(0, 245, 176, 0.12)),
+    url("https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg") center /
+      cover no-repeat;
+}
+
+.landing-page .hospital-map {
+  border: 1px solid rgba(115, 255, 210, 0.24);
+  background:
+    linear-gradient(120deg, rgba(0, 208, 132, 0.18), rgba(115, 255, 210, 0.12)),
+    linear-gradient(45deg, rgba(11, 56, 42, 0.7) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(11, 56, 42, 0.7) 25%, transparent 25%);
+  background-size: cover, 24px 24px, 24px 24px;
+  background-position: center, 0 0, 12px 12px;
+}
+
+.landing-page .pipeline-row .bar {
+  background: rgba(8, 51, 37, 0.82);
+}
+
+.landing-page .faq-item,
+.landing-page details {
+  border-color: rgba(115, 255, 210, 0.28);
+}
+
+.landing-page details summary:hover {
+  background: rgba(16, 78, 58, 0.55);
+}
+
+.landing-page details[open] summary {
+  background: rgba(19, 96, 71, 0.62);
+}
+
+.landing-page .process-step:hover,
+.landing-page .gallery-item:hover {
+  box-shadow: 0 12px 30px rgba(0, 125, 84, 0.3);
+}
+
+.landing-page .cta-section {
+  background: linear-gradient(135deg, rgba(0, 208, 132, 0.14), rgba(0, 245, 176, 0.08));
+  border: 2px solid rgba(115, 255, 210, 0.2);
+}
+
+.landing-page .service-list strong,
+.landing-page .eyebrow-light {
+  color: #d2ffea;
+}
+
+.landing-page .btn-outline-dark {
+  color: #b7fddf;
+  border-color: rgba(115, 255, 210, 0.4);
+}
+
+.landing-page > footer {
+  background: linear-gradient(145deg, rgba(4, 20, 15, 0.97), rgba(7, 40, 30, 0.98));
+  border-top: 1px solid rgba(115, 255, 210, 0.24);
+  color: #c8f7e3;
+}
+
+.landing-page > footer a {
+  color: #9df6ce;
+}
+
+.landing-page > footer a:hover {
+  color: #d7ffef;
+}
+
 * {
   box-sizing: border-box;
 }
