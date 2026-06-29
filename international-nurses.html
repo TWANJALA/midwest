@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260628" />
+    <link rel="stylesheet" href="styles.css" />
       <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-041TBH2GBJ"></script>
     <script>
@@ -17,10 +17,10 @@
       gtag('config', 'G-041TBH2GBJ');
     </script>
   </head>
-  <body class="landing-page">
+  <body>
     <div class="site-bg" aria-hidden="true"></div>
     <header class="topbar">
-      <a class="brand" href="index.html">
+      <a class='brand' href='/'>
         <span class="brand-mark">M</span>
         <span>
           <strong>Midwest Healthcare Staffing Agency</strong>
@@ -33,9 +33,9 @@
 
     <main class="container">
       <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <a href="index.html">Home</a>
+        <a href='/'>Home</a>
         <span>/</span>
-        <a href="international-nurses.html" aria-current="page">International Nurses</a>
+        <a aria-current='page' href='/international-nurses'>International Nurses</a>
       </nav>
 
       <section class="section-card reveal">
@@ -120,168 +120,6 @@
         </div>
       </section>
 
-      <section class="section-card reveal">
-        <h2>Healthcare Agency Nurse Application</h2>
-        <p>
-          Apply for healthcare agency nursing positions across the United States. Join our network of international healthcare professionals providing quality care through staffing agencies.
-        </p>
-        <h3>International Nurse Application</h3>
-        <p>Start your U.S. healthcare career journey.</p>
-
-        <form class="nurse-application-form" action="https://formspree.io/f/movknbrb" method="POST">
-          <input type="hidden" name="_subject" value="International Nurse Agency Application" />
-
-          <fieldset>
-            <legend>Personal Information</legend>
-            <p class="small-note">Tell us about yourself.</p>
-            <div class="application-grid two-col">
-              <label>First Name *<input type="text" name="first_name" required /></label>
-              <label>Middle Name<input type="text" name="middle_name" /></label>
-              <label>Last Name *<input type="text" name="last_name" required /></label>
-              <label>Date of Birth *<input type="date" name="date_of_birth" required /></label>
-              <label>Gender *<select name="gender" required><option value="">Select</option><option>Male</option><option>Female</option><option>Other</option></select></label>
-              <label>Nationality *<input type="text" name="nationality" required /></label>
-              <label>Country of Residence *<input type="text" name="country_of_residence" required /></label>
-              <label>Email Address *<input type="email" name="email" required /></label>
-              <label>Phone Number *<input type="tel" name="phone_number" required /></label>
-              <label>WhatsApp Number<input type="tel" name="whatsapp_number" /></label>
-              <label>Marital Status *<select name="marital_status" required><option value="">Select</option><option>Single</option><option>Married</option></select></label>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>Passport Information Required</legend>
-            <p class="small-note">Please ensure your passport is valid for at least 6 months beyond your intended travel date.</p>
-            <div class="application-grid two-col">
-              <label>Passport Number *<input type="text" name="passport_number" required /></label>
-              <label>Passport Expiration *<input type="date" name="passport_expiration" required /></label>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>Address Information</legend>
-            <p class="small-note">Your current residential address.</p>
-            <div class="application-grid two-col">
-              <label>Street Address *<input type="text" name="street_address" required /></label>
-              <label>City *<input type="text" name="city" required /></label>
-              <label>State/Province *<input type="text" name="state_province" required /></label>
-              <label>Postal Code *<input type="text" name="postal_code" required /></label>
-              <label>Country *<input type="text" name="address_country" required /></label>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>Nursing Education and Credentials</legend>
-            <div class="application-grid two-col">
-              <label>Nursing Education Level *<input type="text" name="education_level" required /></label>
-              <label>Nursing School/University *<input type="text" name="nursing_school" required /></label>
-              <label>Graduation Year *<input type="number" name="graduation_year" min="1950" max="2100" required /></label>
-              <label>Nursing Specialization *<input type="text" name="nursing_specialization" required /></label>
-            </div>
-
-            <h4>Nursing License Information</h4>
-            <div class="application-grid two-col">
-              <label>License Number *<input type="text" name="license_number" required /></label>
-              <label>License Issuing Country *<input type="text" name="license_issuing_country" required /></label>
-              <label>License Expiration Date *<input type="date" name="license_expiration_date" required /></label>
-              <label>NCLEX-RN Status *<select name="nclex_status" required><option value="">Select</option><option>Yes, I have passed</option><option>Not yet</option><option>Scheduled to take</option></select></label>
-              <label>CGFNS Status *<select name="cgfns_status" required><option value="">Select</option><option>Yes, certified</option><option>Not certified</option><option>In progress</option></select></label>
-              <label>Additional Nursing Certifications<input type="text" name="additional_certifications" /></label>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>Nursing Experience</legend>
-            <div class="application-grid two-col">
-              <label>Total Years of Nursing Experience *<input type="number" name="years_experience" min="0" required /></label>
-              <label>Current Hospital/Facility<input type="text" name="current_hospital" /></label>
-              <label>Current Position/Unit<input type="text" name="current_position" /></label>
-              <label>Previous Hospital/Facility<input type="text" name="previous_hospital" /></label>
-              <label>Previous Position/Unit<input type="text" name="previous_position" /></label>
-              <label>Employment Dates<input type="text" name="employment_dates" placeholder="e.g. Jan 2020 - Present" /></label>
-            </div>
-            <label>Why are you interested in U.S. healthcare agency work?<textarea name="us_agency_interest" rows="4" required></textarea></label>
-          </fieldset>
-
-          <fieldset>
-            <legend>English Language Proficiency</legend>
-            <div class="application-grid two-col">
-              <label>Speaking Ability *<select name="speaking_ability" required><option value="">Select</option><option>Excellent</option><option>Good</option><option>Fair</option><option>Basic</option></select></label>
-              <label>Reading Ability *<select name="reading_ability" required><option value="">Select</option><option>Excellent</option><option>Good</option><option>Fair</option><option>Basic</option></select></label>
-              <label>Writing Ability *<select name="writing_ability" required><option value="">Select</option><option>Excellent</option><option>Good</option><option>Fair</option><option>Basic</option></select></label>
-            </div>
-            <label>English Language Test Scores *<textarea name="english_test_scores" rows="3" placeholder="Include TOEFL, IELTS, OET, or other test scores with dates" required></textarea></label>
-          </fieldset>
-
-          <fieldset>
-            <legend>Nursing Specialties and Expertise</legend>
-            <p class="small-note">Select all areas where you have clinical experience.</p>
-            <div class="checkbox-grid">
-              <label><input type="checkbox" name="specialties" value="Medical-Surgical Nursing" /> Medical-Surgical Nursing</label>
-              <label><input type="checkbox" name="specialties" value="Intensive Care (ICU)" /> Intensive Care (ICU)</label>
-              <label><input type="checkbox" name="specialties" value="Emergency Room (ER)" /> Emergency Room (ER)</label>
-              <label><input type="checkbox" name="specialties" value="Pediatric Nursing" /> Pediatric Nursing</label>
-              <label><input type="checkbox" name="specialties" value="Neonatal Care (NICU)" /> Neonatal Care (NICU)</label>
-              <label><input type="checkbox" name="specialties" value="Oncology" /> Oncology</label>
-              <label><input type="checkbox" name="specialties" value="Geriatric Nursing" /> Geriatric Nursing</label>
-              <label><input type="checkbox" name="specialties" value="Operating Room (OR)" /> Operating Room (OR)</label>
-              <label><input type="checkbox" name="specialties" value="Labor and Delivery" /> Labor and Delivery</label>
-              <label><input type="checkbox" name="specialties" value="Psychiatric/Mental Health" /> Psychiatric/Mental Health</label>
-              <label><input type="checkbox" name="specialties" value="Home Health" /> Home Health</label>
-              <label><input type="checkbox" name="specialties" value="Telemetry" /> Telemetry</label>
-            </div>
-            <label>Other Specialties or Clinical Skills<textarea name="other_specialties" rows="3"></textarea></label>
-          </fieldset>
-
-          <fieldset>
-            <legend>Healthcare Agency Work Preferences</legend>
-            <p class="small-note">What type of agency assignments interest you?</p>
-            <div class="checkbox-grid">
-              <label><input type="checkbox" name="assignment_preferences" value="Travel Nursing" /> Travel Nursing - 13-week assignments across the country</label>
-              <label><input type="checkbox" name="assignment_preferences" value="Per Diem/PRN" /> Per Diem/PRN - Flexible day-to-day scheduling</label>
-              <label><input type="checkbox" name="assignment_preferences" value="Contract Assignments" /> Contract Assignments - Fixed-term contract positions</label>
-              <label><input type="checkbox" name="assignment_preferences" value="Long-Term Agency" /> Long-Term Agency - Extended placement opportunities</label>
-              <label><input type="checkbox" name="assignment_preferences" value="Short-Term Agency" /> Short-Term Agency - Quick fill-in assignments</label>
-              <label><input type="checkbox" name="assignment_preferences" value="Float Pool" /> Float Pool - Work across multiple units</label>
-            </div>
-            <div class="application-grid two-col">
-              <label>Preferred U.S. States/Regions *<input type="text" name="preferred_states_regions" required /></label>
-              <label>When can you start? *<input type="text" name="start_timeline" required /></label>
-              <label>Shift Preferences *<input type="text" name="shift_preferences" required /></label>
-              <label>Willingness to Relocate *<select name="relocation_willingness" required><option value="">Select</option><option>Yes, willing to travel anywhere</option><option>Prefer local assignments only</option></select></label>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>U.S. Employment Eligibility</legend>
-            <p class="small-note">Visa and work authorization information.</p>
-            <div class="application-grid two-col">
-              <label>Worked in the United States Before? *<select name="worked_in_us" required><option value="">Select</option><option>Yes, I have U.S. experience</option><option>No, this would be my first time</option></select></label>
-              <label>Require Visa Sponsorship? *<select name="require_visa_sponsorship" required><option value="">Select</option><option>Yes, I need sponsorship</option><option>No, I am authorized to work</option></select></label>
-              <label>Preferred Visa Category<select name="preferred_visa_category"><option value="">Select</option><option>EB-3 (Skilled Worker) - Employment-based green card</option><option>H-1B (Specialty Occupation) - Temporary work visa</option><option>TN (NAFTA Professional) - For Canadian/Mexican citizens</option><option>Other - Other visa type</option></select></label>
-              <label>Ever Denied a U.S. Visa? *<select name="visa_denial" required><option value="">Select</option><option>Yes</option><option>No</option></select></label>
-            </div>
-            <label>If yes, please explain<textarea name="visa_denial_explanation" rows="3"></textarea></label>
-          </fieldset>
-
-          <fieldset>
-            <legend>Declaration and Signature</legend>
-            <p class="small-note">
-              By signing below, you certify that all information provided is accurate and complete. False information may result in disqualification from employment opportunities.
-            </p>
-            <div class="application-grid two-col">
-              <label>Electronic Signature *<input type="text" name="electronic_signature" placeholder="Your typed name serves as your legal electronic signature" required /></label>
-            </div>
-            <label class="checkbox-row">
-              <input type="checkbox" name="declaration_consent" required />
-              I certify that all information provided in this application is accurate and complete. I understand that false information may result in disqualification from healthcare agency nursing employment opportunities in the United States. I consent to background checks and credential verification.
-            </label>
-            <p class="small-note">Your information is secure and confidential.</p>
-          </fieldset>
-
-          <button type="submit" class="btn btn-gold">Submit International Nurse Application</button>
-        </form>
-      </section>
     </main>
 
     <footer>
@@ -293,29 +131,29 @@
         <div>
           <h4>Nurse Resources</h4>
           <ul>
-            <li><a href="international-nurses.html">International Nurses</a></li>
-            <li><a href="training-academy.html">Training Academy</a></li>
-            <li><a href="credentialing.html">Credentialing</a></li>
+            <li><a href='/international-nurses'>International Nurses</a></li>
+            <li><a href='/training-academy'>Training Academy</a></li>
+            <li><a href='/credentialing'>Credentialing</a></li>
           </ul>
         </div>
         <div>
           <h4>Support</h4>
           <ul>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="candidate-portal.html">Candidate Portal</a></li>
-            <li><a href="resources.html">Resources</a></li>
+            <li><a href='/contact'>Contact</a></li>
+            <li><a href='/candidate-portal'>Candidate Portal</a></li>
+            <li><a href='/resources'>Resources</a></li>
           </ul>
         </div>
         <div>
           <h4>Apply</h4>
           <ul>
-            <li><a href="apply-now.html">Apply Now</a></li>
-            <li><a href="faq.html">FAQ</a></li>
+            <li><a href='/apply-now'>Apply Now</a></li>
+            <li><a href='/faq'>FAQ</a></li>
           </ul>
         </div>
       </div>
     </footer>
 
-    <script src="script.js?v=20260628"></script>
+    <script src="script.js"></script>
   </body>
 </html>
