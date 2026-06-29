@@ -93,14 +93,92 @@ body {
 }
 
 .brand-mark {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 auto;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  font-weight: 800;
-  color: var(--white);
+  filter: drop-shadow(0 4px 14px rgba(0, 224, 122, 0.45));
+}
+
+.mhsa-logo {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transform-origin: 32px 34px;
+  animation: mhsa-heartbeat 2.2s ease-in-out infinite;
+}
+
+.mhsa-ring {
+  transform-origin: 32px 32px;
+  animation: mhsa-spin 6s linear infinite;
+}
+
+.mhsa-badge {
+  transform-origin: 32px 32px;
+}
+
+.mhsa-heart {
+  transform-origin: 32px 30px;
+  animation: mhsa-heart-glow 2.2s ease-in-out infinite;
+}
+
+.mhsa-pulse {
+  stroke-dasharray: 70;
+  stroke-dashoffset: 70;
+  filter: drop-shadow(0 0 2px rgba(7, 36, 26, 0.4));
+  animation: mhsa-trace 2.2s ease-in-out infinite;
+}
+
+.brand:hover .mhsa-logo {
+  animation-duration: 0.9s;
+}
+
+.brand:hover .mhsa-ring {
+  animation-duration: 2.4s;
+}
+
+@keyframes mhsa-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes mhsa-heartbeat {
+  0%,
+  55%,
+  100% {
+    transform: scale(1);
+  }
+  12% {
+    transform: scale(1.12);
+  }
+  24% {
+    transform: scale(1);
+  }
+  34% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes mhsa-heart-glow {
+  0%,
+  100% {
+    fill: #ffffff;
+  }
+  30% {
+    fill: #eafff3;
+  }
+}
+
+@keyframes mhsa-trace {
+  0% {
+    stroke-dashoffset: 70;
+  }
+  45%,
+  100% {
+    stroke-dashoffset: -70;
+  }
 }
 
 .brand strong {
@@ -129,8 +207,15 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .brand strong {
+  .brand strong,
+  .mhsa-logo,
+  .mhsa-ring,
+  .mhsa-heart,
+  .mhsa-pulse {
     animation: none;
+  }
+  .mhsa-pulse {
+    stroke-dashoffset: 0;
   }
 }
 
