@@ -82,6 +82,8 @@ body {
   gap: 20px;
   background: rgba(7, 36, 26, 0.95);
   backdrop-filter: blur(10px);
+  border-bottom: 3px solid var(--secondary);
+  box-shadow: 0 6px 24px rgba(7, 36, 26, 0.45);
 }
 
 .brand {
@@ -152,21 +154,91 @@ nav {
 }
 
 nav a {
+  position: relative;
   color: #e6fff3;
   text-decoration: none;
   font-size: 0.86rem;
-  opacity: 0.9;
-  transition: all 0.2s ease;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.92;
+  transition: color 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Animated underline that grows from the center on hover */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--secondary-light), var(--secondary));
+  transform: translateX(-50%);
+  transition: width 0.28s ease;
 }
 
 nav a:hover {
   color: var(--secondary-light);
   opacity: 1;
+  transform: translateY(-2px);
+  text-shadow: 0 0 12px rgba(70, 224, 143, 0.55);
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 nav a.active {
   color: var(--secondary-light);
-  font-weight: 800;
+  font-weight: 900;
+}
+
+nav a.active::after {
+  width: 100%;
+}
+
+nav a.btn {
+  text-transform: uppercase;
+}
+
+/* Staggered slide-in for nav links when the page loads */
+@media (min-width: 1101px) {
+  nav a {
+    animation: nav-enter 0.5s ease both;
+  }
+  nav a:nth-child(1)  { animation-delay: 0.04s; }
+  nav a:nth-child(2)  { animation-delay: 0.08s; }
+  nav a:nth-child(3)  { animation-delay: 0.12s; }
+  nav a:nth-child(4)  { animation-delay: 0.16s; }
+  nav a:nth-child(5)  { animation-delay: 0.20s; }
+  nav a:nth-child(6)  { animation-delay: 0.24s; }
+  nav a:nth-child(7)  { animation-delay: 0.28s; }
+  nav a:nth-child(8)  { animation-delay: 0.32s; }
+  nav a:nth-child(9)  { animation-delay: 0.36s; }
+  nav a:nth-child(10) { animation-delay: 0.40s; }
+  nav a:nth-child(n+11) { animation-delay: 0.44s; }
+}
+
+@keyframes nav-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 0.92;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  nav a {
+    animation: none;
+  }
+  nav a:hover {
+    transform: none;
+  }
 }
 
 .breadcrumbs {
